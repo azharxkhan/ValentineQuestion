@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <link rel="stylesheet" type="text/css" href="valen.css">
+</head>
+<body>
+    <header>
+        <!-- Removed the h1 element -->
+    </header>
+    
+    <main>
+        <section id="valentineQuestion">
+            <p>Dear [Girlfriend's Name],</p>
+            <p>I've created this website to express my feelings for you and ask if you would be my Valentine.</p>
+            <p id="questionText">Will you be my Valentine?</p>
+        </section>
+
+        <div class="button-box">
+            <button id="yesButton" onclick="showAnswer('yes')">Yes</button>
+            <button id="noButton" onclick="showAnswer('no')">No</button>
+        </div>
+
+        <section id="answer" style="display: none;">
+            <p id="answerText">...</p>
+        </section>
+
+        <section>
+            <!-- Add your photo gallery, countdown timer, and other elements here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 YourName. All rights reserved.</p>
+    </footer>
+
+    <script src="val.js"></script>
+</body>
+</html>
