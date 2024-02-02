@@ -10,6 +10,7 @@ function revealQuestion() {
 
 function showAnswer(answer) {
     const answerText = document.getElementById('answerText');
+    const noButton = document.getElementById('noButton');
     const phrases = ["Pretty Please", "I beg you", "Be with me, We're meant to be", 
     "I love you, be my Valentine", "Please be my Valentine", "You look perfect with me",
     "You're Beautiful, Be my Valentine", "You're the Most Beautiful"];
@@ -17,7 +18,9 @@ function showAnswer(answer) {
     if (answer === 'yes') {
         answerText.innerHTML = 'Yes! I\'d love to be your Valentine!';
         document.getElementById('slideshow').style.display = 'block';  // Show the slideshow
+        adjustImageSize();  // Adjust image size when the answer is 'yes'
         startSlideshow();  // Start the slideshow when the answer is 'yes'
+        noButton.style.display = 'none';  // Hide the "No" button
     } else {
         const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
         answerText.innerHTML = randomPhrase;
@@ -43,6 +46,16 @@ function moveNoButton() {
         noButtonCount = 0;
         noButton.style.position = 'static';
     }
+}
+
+function adjustImageSize() {
+    const images = document.querySelectorAll('#slideshow img');
+    
+    images.forEach(img => {
+        img.style.width = '80%'; // Adjusted size to 80% of the container width
+        img.style.margin = '0 auto'; // Center the image horizontally
+        img.style.display = 'block'; // Ensure the image is visible
+    });
 }
 
 function startSlideshow() {
