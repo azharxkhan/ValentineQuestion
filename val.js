@@ -10,10 +10,14 @@ function revealQuestion() {
 
 function showAnswer(answer) {
     const answerText = document.getElementById('answerText');
-    const phrases = ["Pretty Please", "I beg you", "Be with me, we're meant to be", "I love you, be my Valentine", "Please be my Valentine"];
+    const phrases = ["Pretty Please", "I beg you", "Be with me, We're meant to be", 
+    "I love you, be my Valentine", "Please be my Valentine", "You look perfect with me",
+    "You're Beautiful, Be my Valentine", "You're the Most Beautiful"];
     
     if (answer === 'yes') {
         answerText.innerHTML = 'Yes! I\'d love to be your Valentine!';
+        document.getElementById('slideshow').style.display = 'block';  // Show the slideshow
+        startSlideshow();  // Start the slideshow when the answer is 'yes'
     } else {
         const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
         answerText.innerHTML = randomPhrase;
@@ -39,4 +43,30 @@ function moveNoButton() {
         noButtonCount = 0;
         noButton.style.position = 'static';
     }
+}
+
+function startSlideshow() {
+    const images = document.querySelectorAll('#slideshow img');
+    let currentIndex = 0;
+
+    function showImage(index) {
+        images.forEach((img, i) => {
+            if (i === index) {
+                img.style.display = 'block';
+            } else {
+                img.style.display = 'none';
+            }
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
+
+    // Initial display
+    showImage(currentIndex);
+
+    // Set interval to switch images every 5 seconds
+    setInterval(nextImage, 5000);
 }

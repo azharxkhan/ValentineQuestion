@@ -11,16 +11,21 @@ body {
 }
 
 header {
-    /* Removed the background-color and padding */
+    background-color: #e74c3c;
+    padding: 10px;
     text-align: center;
-    color: #333;
+    color: #fff;
+    width: 100%;
+    position: fixed; /* Fixed position at the top */
+    top: 0; /* Align to the top */
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 main {
     max-width: 800px;
-    margin: 20px auto;
+    margin: 70px auto 20px; /* Adjusted margin to accommodate the fixed header */
     padding: 20px;
-    background-color: #fff; /* Added a white background */
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -64,6 +69,18 @@ button:hover {
 
 #answerText {
     color: #c0392b;
+}
+
+#slideshow {
+    display: none;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+#slideshow img {
+    width: 100%; /* Make images fill the container */
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 footer {
