@@ -11,16 +11,17 @@ function revealQuestion() {
 function showAnswer(answer) {
     const answerText = document.getElementById('answerText');
     const noButton = document.getElementById('noButton');
-    const phrases = ["Pretty Please", "I beg you", "Be with me, We're meant to be", 
-    "I love you, be my Valentine", "Please be my Valentine", "You look perfect with me",
-    "You're Beautiful, Be my Valentine", "You're the Most Beautiful"];
+    const phrases = ["Pretty Please!", "I beg you :3", "Be with me, We're meant to be :p", 
+    "I love you, be my Valentine <3", "Please be my Valentine <3", "You look perfect with me :)",
+    "You're Beautiful, Be my Valentine!?!?", "You're the Most Beautiful!! ;)"];
     
     if (answer === 'yes') {
-        answerText.innerHTML = 'Yes! I\'d love to be your Valentine!';
-        document.getElementById('slideshow').style.display = 'block';  // Show the slideshow
-        adjustImageSize();  // Adjust image size when the answer is 'yes'
-        startSlideshow();  // Start the slideshow when the answer is 'yes'
+        answerText.innerHTML = 'Yay, I have a Valentine!!!!!!!!!!!';
         noButton.style.display = 'none';  // Hide the "No" button
+
+        // Show the GIF
+        const gifContainer = document.getElementById('gif-container');
+        gifContainer.style.display = 'block';
     } else {
         const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
         answerText.innerHTML = randomPhrase;
@@ -46,40 +47,4 @@ function moveNoButton() {
         noButtonCount = 0;
         noButton.style.position = 'static';
     }
-}
-
-function adjustImageSize() {
-    const images = document.querySelectorAll('#slideshow img');
-    
-    images.forEach(img => {
-        img.style.width = '80%'; // Adjusted size to 80% of the container width
-        img.style.margin = '0 auto'; // Center the image horizontally
-        img.style.display = 'block'; // Ensure the image is visible
-    });
-}
-
-function startSlideshow() {
-    const images = document.querySelectorAll('#slideshow img');
-    let currentIndex = 0;
-
-    function showImage(index) {
-        images.forEach((img, i) => {
-            if (i === index) {
-                img.style.display = 'block';
-            } else {
-                img.style.display = 'none';
-            }
-        });
-    }
-
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-    }
-
-    // Initial display
-    showImage(currentIndex);
-
-    // Set interval to switch images every 5 seconds
-    setInterval(nextImage, 5000);
 }
