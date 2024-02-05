@@ -46,12 +46,11 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #1a2c4c;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
 }
 
 #noButton {
@@ -64,12 +63,12 @@ button:hover {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Added box-shadow to the transition */
 }
 
 #noButton:hover {
     background-color: #c0392b;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Added a subtle shadow on hover */
 }
 
 #noButton:hover + #valentineQuestion {
