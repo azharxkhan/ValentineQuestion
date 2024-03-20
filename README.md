@@ -15,7 +15,7 @@ This HTML webpage serves as a romantic proposal platform, asking a significant q
 
 ## Inspiration
 
-This webpage was created by Azhar as a special gift for his beloved girlfriend, Hajra, on Valentine's Day. It reflects my love and heart to create unforgettable moment.
+This webpage was created as special gift for my girlfriend, Hajra, on Valentine's Day. It reflects my love and heart to create unforgettable moment.
 
 
 ## Customization
