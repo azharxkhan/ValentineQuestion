@@ -1,0 +1,23 @@
+name: Weekly GitHub Pages Redeploy
+
+on:
+  schedule:
+    - cron: '0 0 * * 0' 
+  workflow_dispatch:  
+
+jobs:
+  trigger-redeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "azhargamer15@gmail.com"
+          git config --global user.name "Azhar"
+
+      - name: Create empty commit
+        run: |
+          git commit --allow-empty -m "Weekly redeploy trigger"
+          git push
